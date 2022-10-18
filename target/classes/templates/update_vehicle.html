@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Inventory Management System</title>
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Inventory Management System</h1>
+    <hr>
+    <h2>Update Vehicle Information</h2>
+
+    <form action="#" th:action="@{/saveVehicle}" th:object = "${vehicles}" method="POST">
+
+        <!-- Add hidden form field to handle update -->
+        <input type="hidden" th:field="*{id_vehicles}" />
+
+        <div class="form-group">
+            <input type="text" th:field = "*{make}" placeholder="Vehicle Make" class="form-control mb-4 col-4">
+            <div class="alert alert-warning" th:field="*{make}" th:if="${#fields.hasErrors('make')}" th:errors="*{make}"></div>
+        </div>
+
+        <div class="form-group">
+            <input type="text" th:field = "*{model}"  placeholder="Vehicle Model" class="form-control mb-4 col-4">
+            <div class="alert alert-warning" th:field="*{model}" th:if="${#fields.hasErrors('model')}" th:errors="*{model}"></div>
+        </div>
+
+        <input type="text" th:field="*{type}" placeholder="Vehicle Type" class="form-control mb-4 col-4">
+
+        <div class="form-group">
+            <input type="text" th:field="*{purchasePrice}" placeholder="Vehicle Purchase Price" id="purchasePrice" class="form-control mb-4 col-4">
+            <div class="alert alert-warning" th:field="*{purchasePrice}" th:if="${#fields.hasErrors('purchasePrice')}" th:errors="*{purchasePrice}"></div>
+        </div>
+
+        <input type="text" th:field="*{purchase_date}" placeholder="Vehicle Purchase Date" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{sales_tax_paid}" placeholder="Vehicle Sales Tax Paid" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{registration_date}" placeholder="Vehicle Registration Date" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{sale_status}" placeholder="Vehicle Sale Status" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{sale_date}" placeholder="Vehicle Sale Date" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{sale_price}" placeholder="Vehicle Sale Price" class="form-control mb-4 col-4">
+
+        <button type="submit" class="btn btn-info col-2"> Update Vehicle Information</button>
+    </form>
+
+    <hr>
+
+    <a th:href = "@{/}"> Back to Vehicle List</a>
+</div>
+</body>
+</html>
