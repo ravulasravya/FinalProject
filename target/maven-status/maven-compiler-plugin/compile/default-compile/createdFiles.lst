@@ -1,0 +1,5 @@
+com\uofa\ws_final_wheelsAndMore\service\VehicleService.class
+com\uofa\ws_final_wheelsAndMore\model\VehiclesDB.class
+com\uofa\ws_final_wheelsAndMore\WsFinalWheelsAndMoreApplication.class
+com\uofa\ws_final_wheelsAndMore\repository\VehicleRepository.class
+com\uofa\ws_final_wheelsAndMore\controller\VehicleController.class
